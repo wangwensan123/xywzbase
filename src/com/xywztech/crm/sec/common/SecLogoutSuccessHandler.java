@@ -40,22 +40,22 @@ public class SecLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler {
     {
         /**登出成功更新日志信息*/
     	doLogoutSuccess(authentication);
-      if (authentication != null) {
-        AuthUser auth = (AuthUser) authentication.getPrincipal();
-                /**判断用户是手机端还是web角色*/
-            boolean flag = false; 
-            List roles = auth.getRolesInfo();
-            for( int i=0;i<roles.size();i++ ){
-              Map role = (Map)auth.getRolesInfo().get(i);
-              String roleCode = role.get("ROLE_CODE").toString();
-              if (roleCode.equals("other")){
-                flag = true; 
-                break;
-                          }
-              
-                      }
-            defaultLogoutUrl="/index.html";
-                }
+//      if (authentication != null) {
+//        AuthUser auth = (AuthUser) authentication.getPrincipal();
+//                /**判断用户是手机端还是web角色*/
+//            boolean flag = false; 
+//            List roles = auth.getRolesInfo();
+//            for( int i=0;i<roles.size();i++ ){
+//              Map role = (Map)auth.getRolesInfo().get(i);
+//              String roleCode = role.get("ROLE_CODE").toString();
+//              if (roleCode.equals("other")){
+//                flag = true; 
+//                break;
+//                          }
+//              
+//                      }
+//            defaultLogoutUrl="/index.html";
+//                }
         redirectStrategy.sendRedirect(request, response, defaultLogoutUrl);
     }
     

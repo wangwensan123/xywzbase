@@ -216,8 +216,7 @@ public class CommonService{
 		WFI wfi = new WFI();// 工作流统一调用接口
 		try {
 			// hm key:instanceid 返回的流程实例号;nodeid 返回的节点ID;formid 返回的表单ID
-			hm = wfi.initWFBySign(wfsign, auth.getUserId(), null, null,
-					jobName, auth.getUnitId(), paramMap, null);
+//			hm = wfi.initWFBySign(wfsign, auth.getUserId(), null, null,jobName, auth.getUnitId(), paramMap, null);
 		} catch (Exception e) {
 			System.out.println("调用工作流引擎接口initWFBySign()异常，信息如下：");
 			e.printStackTrace();
@@ -247,8 +246,7 @@ public class CommonService{
 		Map hm = null;
 		try {
 			// hm key:instanceid 返回的流程实例号;nodeid 返回的节点ID;formid 返回的表单ID
-			hm = wfi.initWFBySign(wfsign, auth.getUserId(), instanceId, null,
-					jobName, auth.getUnitId(), paramMap, null);
+//			hm = wfi.initWFBySign(wfsign, auth.getUserId(), instanceId, null,jobName, auth.getUnitId(), paramMap, null);
 		} catch (Exception e) {
 			System.out.println("调用工作流引擎接口initWFBySign()异常，信息如下：");
 			e.printStackTrace();

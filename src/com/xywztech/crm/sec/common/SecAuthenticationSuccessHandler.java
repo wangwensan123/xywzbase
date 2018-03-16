@@ -62,32 +62,32 @@ public class SecAuthenticationSuccessHandler implements AuthenticationSuccessHan
           	    }
         } 
         /**判断用户是手机端还是web角色*/
-    boolean flag = false; 
-    List roles = auth.getRolesInfo();
-    for( int i=0;i<roles.size();i++ ){
-      Map role = (Map)auth.getRolesInfo().get(i);
-      String roleCode = role.get("ROLE_CODE").toString();
-      if (roleCode.equals("other")){
-        flag = true; 
-        break;
-                  }
-      
-              }
+//    boolean flag = false; 
+//    List roles = auth.getRolesInfo();
+//    for( int i=0;i<roles.size();i++ ){
+//      Map role = (Map)auth.getRolesInfo().get(i);
+//      String roleCode = role.get("ROLE_CODE").toString();
+//      if (roleCode.equals("other")){
+//        flag = true; 
+//        break;
+//                  }
+//      
+//              }
         /**是否禁止用户登录*/
     if (isIncludFlag) {
-      if(flag){
-        redirectStrategy.sendRedirect(request, response, "/index.html");;
-      }else{
+//      if(flag){
+//        redirectStrategy.sendRedirect(request, response, "/index.html");;
+//      }else{
         redirectStrategy.sendRedirect(request, response, defaultFailureUrl);
-              }
+//              }
     } else {
       doLoginSuccess(request);
 
-      if(flag){
-        redirectStrategy.sendRedirect(request, response, "/webadmin/admin-index.html");;
-      }else{
+//      if(flag){
+//        redirectStrategy.sendRedirect(request, response, "/webadmin/admin-index.html");;
+//      }else{
         redirectStrategy.sendRedirect(request, response,defaultSuccessUrl);
-              }
+//              }
       }
 		
 	}
